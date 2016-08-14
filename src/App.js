@@ -1,13 +1,37 @@
 import React, { Component } from 'react';
+import Header from './components/header/Header'
+import { connect } from 'react-redux';
+import * as Actions from './actions';
 
 class App extends Component {
+
+  componentDidMount() { this.props.getProducts() }
+
   render() {
-    return (
+    return(
       <div>
-        <h1>Hello</h1>
+        <Header/>
+        <div className='container'>
+          {this.props.children}
+        </div>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    users: state.products
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getProducts: () => dispatch(Actions.getProducts())
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
