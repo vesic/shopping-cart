@@ -23,7 +23,7 @@ class Product extends Component {
   }
 
   getProduct(id) {
-    return axios.get(process.env.HOST ? `${process.env.HOST}/products/${id}` : `http://localhost:3333/products/${id}`)
+    return axios.get(`https://polar-temple-55189.herokuapp.com/products/${id}`)
   }
 
   render() {

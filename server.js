@@ -5,7 +5,7 @@ var cors = require('cors')
 var mongoose = require('mongoose');
 
 app.use(express.static('build'));
-app.use(cors());
+if (app.get('env') === 'development') app.use(cors());
 
 mongoose.connect('mongodb://vesic:vesic@ds037155.mlab.com:37155/my');
 var db = mongoose.connection;
