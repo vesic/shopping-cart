@@ -21,7 +21,7 @@ const Cart = ({ cart, clearCart }) => {
   :
   (
     <div className="panel panel-default">
-      <div className="panel-heading">``
+      <div className="panel-heading">
         <div className="panel-title">
           <h3>Total <span className="label label-default pull-right">${ total.toFixed(2) }</span></h3>
         </div>
