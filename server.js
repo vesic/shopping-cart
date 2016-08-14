@@ -4,6 +4,7 @@ var app = express();
 var cors = require('cors')
 var mongoose = require('mongoose');
 
+app.use(express.static('build'));
 app.use(cors());
 
 mongoose.connect('mongodb://vesic:vesic@ds037155.mlab.com:37155/my');
@@ -18,7 +19,7 @@ app.set('port', process.env.PORT || 3333);
 app.use('/products', require('./routes/products'));
 
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.sendFile('index.html');
 });
 
 app.listen(app.get('port'), () => {
