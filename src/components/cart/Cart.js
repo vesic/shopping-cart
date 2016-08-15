@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux';
 import _ from 'lodash'
 import * as Actions from '../../actions';
+import StripeCheckout from '../stripe/StripeCheckout'
 
 const Cart = ({ cart, clearCart }) => {
   let total = _.reduce(cart, (sum, item) => { return sum + +item.price }, 0);
@@ -28,7 +29,7 @@ const Cart = ({ cart, clearCart }) => {
       </div>
       <ul className="list-group">
         {
-          _.map(cart, p => <li key={p._id} className="list-group-item">
+          _.map(cart, (p, i) => <li key={p._id + i} className="list-group-item">
             <strong>{p.name}</strong>
             <span className="badge">${p.price}</span>
           </li>)
@@ -38,13 +39,14 @@ const Cart = ({ cart, clearCart }) => {
             onClick={() => clearCart() }
             className='btn btn-info btn-block'>clear</button>
         </li>
-        <li className='list-group-item'>
-          <button className='btn btn-danger btn-block'>Checkout</button>
+        <li className='list-group-item text-center'>
+          <StripeCheckout/>
         </li>
       </ul>
     </div>
   )
 }
+
 
 const mapStateToProps = (state) => {
   return {
