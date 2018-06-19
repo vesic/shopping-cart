@@ -11,7 +11,7 @@ const Header = ({ cart }) => {
           <Link to="/" className="navbar-brand">Shopping Cart</Link>
         </div>
         <ul className='nav navbar-nav'>
-          <li><Link to="/about">About</Link></li>
+          {/* <li><Link to="/about">About</Link></li> */}
         </ul>
         <ul className="nav navbar-nav navbar-right">
           <p className="navbar-text">
