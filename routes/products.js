@@ -25,6 +25,7 @@ router.get('/seed', (req, res) => {
 
   let products = [];
   _.times(50, (index) => {
+    let randomImageId = Math.floor(Math.random() * 200) + 1;
     products.push(
       new Product({
         category: faker.random.arrayElement(categories),
@@ -34,8 +35,8 @@ router.get('/seed', (req, res) => {
         stars: faker.random.arrayElement([1, 2, 3, 4, 5]),
         price: faker.commerce.price(10, 200),
         // imgUrl: faker.image.abstract(320, 150, true)
-        imgUrl: `https://picsum.photos/200/300/?image=${Math.floor(Math.random() * 1000) + 1}`,
-        largeImgUrl: `https://picsum.photos/200/300/?image=${Math.floor(Math.random() * 1000) + 1}`
+        imgUrl: `https://picsum.photos/200/300/?image=${randomImageId}`,
+        largeImgUrl: `https://picsum.photos/200/300/?image=${randomImageId}`
       })
     )
   });
