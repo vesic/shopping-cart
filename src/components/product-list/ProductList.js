@@ -5,6 +5,7 @@ import * as Actions from '../../actions';
 import _ from 'lodash';
 
 const ProductList = ({ products, addToCart }) => {
+  console.log('products', products)
   return (
     <div className="col-sm-9">
       {
@@ -15,7 +16,7 @@ const ProductList = ({ products, addToCart }) => {
               <Link to={`/product/${p._id}`}><img src={p.imgUrl} alt="" /></Link>
               <div className="caption">
                 <h4 className="pull-right">${p.price}</h4>
-                <h4><Link to='/'>{p.name}</Link></h4>
+                <h4><Link to={`/product/${p._id}`}>{p.name}</Link></h4>
                 <p>{p.info}</p>
               </div>
               <div

@@ -12,13 +12,13 @@ const Carousel = (props) => {
               </ol>
               <div className="carousel-inner">
                   <div className="item active">
-                      <img className="slide-image" src="http://placehold.it/1200x400" alt="" />
+                      <img className="slide-image" src="https://placehold.it/1200x400" alt="" />
                   </div>
                   <div className="item">
-                      <img className="slide-image" src="http://placehold.it/1200x400" alt="" />
+                      <img className="slide-image" src="https://placehold.it/1200x400" alt="" />
                   </div>
                   <div className="item">
-                      <img className="slide-image" src="http://placehold.it/1200x400" alt="" />
+                      <img className="slide-image" src="https://placehold.it/1200x400" alt="" />
                   </div>
               </div>
           </div>

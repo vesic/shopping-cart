@@ -24,6 +24,7 @@ class Product extends Component {
 
   getProduct(id) {
     return axios.get(`https://polar-temple-55189.herokuapp.com/products/${id}`)
+    // return axios.get(`http://localhost:3333/products/${id}`)
   }
 
   render() {

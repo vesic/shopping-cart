@@ -9,8 +9,8 @@ export function filterProducts(term) {
 
 export function getProducts() {
   return dispatch => {
-    // http://localhost:3333/products
     axios.get('https://polar-temple-55189.herokuapp.com/products')
+    // axios.get('http://localhost:3333/products')
       .then((res) => {
         dispatch({
           type: "GET_PRODUCTS",

@@ -34,8 +34,8 @@ router.get('/seed', (req, res) => {
         stars: faker.random.arrayElement([1, 2, 3, 4, 5]),
         price: faker.commerce.price(10, 200),
         // imgUrl: faker.image.abstract(320, 150, true)
-        imgUrl: `http://lorempixel.com/320/150/abstract/?${index}/`,
-        largeImgUrl: `http://lorempixel.com/800/300/abstract/?${index}/`
+        imgUrl: `https://picsum.photos/200/300/?image=${Math.floor(Math.random() * 1000) + 1}`,
+        largeImgUrl: `https://picsum.photos/200/300/?image=${Math.floor(Math.random() * 1000) + 1}`
       })
     )
   });
